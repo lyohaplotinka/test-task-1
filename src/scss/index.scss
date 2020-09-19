@@ -1,0 +1,12 @@
+html {
+  font-size: 14px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+@import "autocomplete-block";
+@import "input";

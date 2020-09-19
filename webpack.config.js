@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     context: __dirname,
@@ -38,8 +39,14 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "css/[name].[contenthash].css",
         }),
+        new HtmlWebpackPlugin({
+            template: "./src/index.html"
+        })
     ],
     optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
+    devServer: {
+        contentBase: './dist'
+    }
 };
