@@ -15,11 +15,22 @@ export class SearchInputManipulator {
         this.value = ''
         this.searchTimeout = null
         this.result = []
+        this.delegateSearchResultsEvent()
+
         this.element.addEventListener('input', this.elementOnChange.bind(this))
         this.element.addEventListener('focus', () => {
             if (this.result.length) this.autocomplete.style.display = 'block'
         })
-        this.element.addEventListener('blur', () => this.autocomplete.style.display = 'none     ')
+    }
+
+    delegateSearchResultsEvent() {
+        document.addEventListener('click', (event) => {
+            if (event.target.classList.contains('search-result')) {
+                const value = event.target.getAttribute('data-value')
+                if (value) this.element.value = value.trim()
+            }
+            if (!event.target.classList.contains('autocomplete-input'))this.autocomplete.style.display = 'none'
+        })
     }
 
     elementOnChange(event) {
@@ -59,6 +70,7 @@ export class SearchInputManipulator {
             const elem = document.createElement('div')
             elem.classList.add('search-result')
             elem.innerText = result
+            elem.setAttribute('data-value', result)
             this.autocomplete.appendChild(elem)
         })
         this.autocomplete.style.display = 'block'

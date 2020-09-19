@@ -13,3 +13,11 @@
   border: solid 1px gray;
   border-top: none;
 }
+
+.search-result {
+  padding: 5px;
+  &:hover {
+    background-color: lightblue;
+    cursor: pointer;
+  }
+}
