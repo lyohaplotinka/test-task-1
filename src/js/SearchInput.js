@@ -8,10 +8,11 @@ export class SearchInput {
             throw new Error('One of elements for SearchInputManipulator not found')
         }
         this.setup()
+        this.requiredResults = Number(process.env.REQUIRED_RESULTS)
     }
 
     setup() {
-        this.servers = Array.from({ length: 3 }, (value, idx) => idx)
+        this.servers = Array.from({ length: Number(process.env.MAX_SERVERS) }, (value, idx) => idx)
         this.value = ''
         this.searchTimeout = null
         this.result = []
@@ -52,8 +53,9 @@ export class SearchInput {
             return
         }
         for await (const server of this.servers) {
-            this.result = await httpSearch(this.value, server)
-            if (this.result.length) break
+            const result = await httpSearch(this.value, server)
+            this.result = [...this.result, ...result]
+            if (this.result.length >= this.requiredResults) break
         }
         this.createAutocompleteElements()
     }

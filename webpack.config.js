@@ -4,6 +4,7 @@ const TerserJSPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
     context: __dirname,
@@ -41,7 +42,8 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: "./src/index.html"
-        })
+        }),
+        new Dotenv()
     ],
     optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],

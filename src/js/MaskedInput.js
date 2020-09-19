@@ -5,7 +5,7 @@ export class MaskedInput {
         if (!this.element || !this.hiddenElement) {
             throw new Error('One of elements for MaskedInput not found')
         }
-
+        this.value = ''
         this.setup()
     }
 
@@ -40,9 +40,14 @@ export class MaskedInput {
     createMaskedOutput(event) {
         const { value } = event.target
         const unmasked = this.cutMask(value)
-        let newValue = unmasked.length <= 11 ? unmasked : this.hiddenElement.value
+        let newValue = unmasked.length <= 11 ? unmasked : this.value
         this.element.value = this.createMask(newValue)
         this.element.setAttribute('data-number', newValue)
-        this.hiddenElement.value = newValue
+        this.value = newValue
+    }
+
+    setValue(value) {
+        this.value = value
+        this.element.value = this.createMask(value)
     }
 }

@@ -8,12 +8,17 @@ html {
   box-sizing: inherit;
 }
 
-.input-wrapper, .masked-wrapper {
-  width: 300px;
-  margin-bottom: 1rem;
+.input-wrapper, .masked-wrapper, .buttons-wrapper {
+  width: 400px;
   position: relative;
+  margin: 0 auto 1rem;
+}
+
+.buttons-wrapper {
+  text-align: center;
 }
 
 @import "autocomplete-block";
 @import "input";
 @import "masked-input";
+@import "buttons";
