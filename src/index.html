@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></head>
 <body>
     <div class="input-wrapper">
-        <input type="text" class="autocomplete-input" placeholder="Введите строку для поиска" id="mainInput">
+        <label for="mainInput">
+            Поиск:
+            <input type="text" class="autocomplete-input" placeholder="К примеру, Lorem" id="mainInput">
+        </label>
         <div class="autocomplete-block"></div>
     </div>
     <div class="masked-wrapper">
-        <input type="text"placeholder="Ваш номер телефона" id="maskedInput">
+        <label for="maskedInput">
+            Ваш номер телефона:
+            <input type="tel" placeholder="К примеру, 89222345678" id="maskedInput">
+        </label>
+        <input type="number" id="hiddenMasked">
     </div>
 </body>
 </html>

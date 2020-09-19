@@ -1,6 +1,6 @@
-import {httpSearch} from "./utils";
+import { httpSearch } from "./utils";
 
-export class SearchInputManipulator {
+export class SearchInput {
     constructor(inputSelector, autocompleteSelector) {
         this.element = document.querySelector(inputSelector)
         this.autocomplete = document.querySelector(autocompleteSelector)

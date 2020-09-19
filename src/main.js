@@ -1,7 +1,9 @@
 import './scss/index.scss'
 
-import { SearchInputManipulator } from "./js/searchInput";
+import { SearchInput } from "./js/SearchInput";
+import {MaskedInput} from "./js/MaskedInput";
 
 document.addEventListener('DOMContentLoaded', () => {
-    window.searchInputManipulator = new SearchInputManipulator('#mainInput', '.autocomplete-block')
+    window.searchInput = new SearchInput('#mainInput', '.autocomplete-block')
+    window.maskedInput = new MaskedInput('#maskedInput', '#hiddenMasked')
 })
