@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production --progress",
-    "dev": "webpack-dev-server --mode=development"
+    "dev": "webpack-dev-server --mode=development",
+    "lint": "eslint '{src,server}/**/*.{js,ts}' --fix"
   },
   "author": "",
   "license": "ISC",
@@ -15,10 +16,14 @@
     "cors": "^2.8.5",
     "css-loader": "^4.3.0",
     "dotenv-webpack": "^3.0.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "html-webpack-plugin": "^4.4.1",
     "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "prettier": "^2.1.2",
     "sass-loader": "^10.0.2",
     "terser-webpack-plugin": "^4.2.1",
     "webpack": "^4.44.2",
