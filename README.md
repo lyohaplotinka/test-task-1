@@ -21,4 +21,9 @@
 
 URL сервера настраивается в .env (`SERVER_URL`).
 
+#### Локальная проверка
+1. `git pull https://github.com/lyohaplotinka/test-task-1.git .`
+2. `npm install`
+3. `npm run start`
+
 ##### Собранный проект находится в папке `dist`
