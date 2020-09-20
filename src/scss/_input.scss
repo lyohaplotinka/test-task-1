@@ -1,10 +1,8 @@
 input {
-  &[type="text"], &[type="tel"] {
-    padding: 5px 15px;
-    font-size: 1.3rem;
-    width: 100%;
-    margin-top: 5px;
-  }
+  padding: 5px 15px;
+  font-size: 1.3rem;
+  width: 100%;
+  margin-top: 5px;
 }
 
 label {
@@ -13,8 +11,6 @@ label {
 
 @media screen and (max-width: 740px) and (orientation: portrait) {
   input {
-    &[type="text"], &[type="tel"] {
-      padding: 10px 20px;
-    }
+    padding: 10px 20px;
   }
 }
