@@ -1,3 +1,5 @@
+import { sendFormToServer } from './utils';
+
 export class StorageService {
   constructor() {
     const data = window.localStorage.getItem('testTaskFormData');

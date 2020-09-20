@@ -22,4 +22,8 @@ app.get('/search/:server', (req, res) => {
   );
 });
 
+app.post('/form/save', (req, res) => {
+  res.send({});
+});
+
 app.listen(3456, () => console.log('Server started'));
