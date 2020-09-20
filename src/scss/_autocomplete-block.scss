@@ -7,6 +7,8 @@
   border: solid 1px gray;
   border-top: none;
   z-index: 2;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .search-result {
@@ -14,5 +16,11 @@
   &:hover {
     background-color: lightblue;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 740px) and (orientation: portrait) {
+  .search-result {
+    padding: 15px 10px;
   }
 }

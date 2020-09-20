@@ -10,3 +10,11 @@ input {
 label {
   font-size: 1.2rem;
 }
+
+@media screen and (max-width: 740px) and (orientation: portrait) {
+  input {
+    &[type="text"], &[type="tel"] {
+      padding: 10px 20px;
+    }
+  }
+}
